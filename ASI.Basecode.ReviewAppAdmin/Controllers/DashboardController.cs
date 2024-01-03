@@ -67,7 +67,8 @@ namespace ASI.Basecode.ReviewAppAdmin.Controllers
         public IActionResult TopBookExpanded(int page = 1, int pageSize = 10, string searchKeyword = "", string sortBy = "")
         {
             var topBookExpanded = _bookService.TopBooksExpanded(page, pageSize, searchKeyword, sortBy);
-
+            ViewBag.SearchKeyword = searchKeyword;
+            ViewBag.SortBy = sortBy;
             return View("TopBookExpanded", topBookExpanded);
         }
 
